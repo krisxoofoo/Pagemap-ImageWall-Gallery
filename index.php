@@ -469,7 +469,7 @@ if($config['Embedded Script'] == 'off' || headers_sent() == false) header('conte
 <?php if($config['Embedded Script'] == 'off') { ?>
 	<footer>
 		<nav><?php if(!empty($config['Home Page'])) { ?><a class="bulbe" href="<?php echo $config['Home Page']; ?>" title="Go to the home page">Home</a><?php } ?><?php if(!empty($config['Contact'])) { ?> • <a class="bulbe" href="<?php echo $config['Contact']; ?>" title="Contact us">Contact</a><?php } ?><?php if(!empty($config['Imprint'])) { ?> • <a class="bulbe" href="<?php echo $config['Imprint']; ?>" title="Imprint this page">Imprint</a> <?php } ?></nav><?php if(!empty($config['Author'])) { ?><p>Photos by <strong><?php echo $config['Author']; ?></strong> - Copyright © 2013 - All rights reserved.</p><?php } ?>
-		<p>Powered by <a class="bulbe" href="http://getpagemap.com/pagemap-imagewall/" title="A free web gallery script for portfolio websites"><strong>Pagemap ImageWall</strong></a> adapted by <a class="bulbe" href="http://www.xoofoo.org/" title="XooFoo Websites"><strong>XooFoo</strong></a></p>
+		<p>Powered by <a class="bulbe" href="http://getpagemap.com/pagemap-imagewall/" title="A free web gallery script for portfolio websites"><strong>Pagemap ImageWall Gallery</strong></a> adapted by <a class="bulbe" href="http://www.xoofoo.org/" title="XooFoo Websites"><strong>XooFoo</strong></a></p>
 	</footer>
 <?php } ?>
 </div>
