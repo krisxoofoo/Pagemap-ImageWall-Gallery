@@ -43,7 +43,7 @@ class cache {
 		rename($cache_file_name . '_tmp',$cache_file_name);
 	}
 }
-// $cache = new cache();
+$cache = new cache();
 // SCRIPT
 error_reporting(0);
 umask(0000);
