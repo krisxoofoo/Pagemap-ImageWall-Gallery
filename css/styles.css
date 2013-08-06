@@ -6,8 +6,8 @@
 .controls {text-align: center;font-size: 1em;opacity: 0;pointer-events: none;-webkit-transition: opacity .3s ease;transition: opacity .3s ease;position: fixed !important;bottom: 0 !important;left: 0;right: 0; }
 .control,.grid,.fs-toggle {width: .66em;height: .66em;text-align: center;line-height: .5em;cursor: pointer;display: inline-block;margin-right: 10px}
 .showControls {opacity: 1;pointer-events: auto;-webkit-transition: opacity .6s 1s ease;transition: opacity .6s 1s ease}
+.icon-grid,.icon-arrow-left,.icon-arrow-right,.icon-fullscreen-exit,.icon-fullscreen {display:inline-block;width: 20px;height: 20px;}
 .hideControls {opacity: 0;pointer-events: none}
-.icon-grid,.icon-arrow-left,.icon-arrow-right,.icon-fullscreen-exit,.icon-fullscreen {display:inline-block;width: 20px;height: 20px;background-image: url(../img/controls-black.png);background-repeat: no-repeat}
 .icon-grid {background-position: 0 0}
 .icon-arrow-left {background-position: -40px 0}
 .icon-arrow-right {background-position: -80px 0}

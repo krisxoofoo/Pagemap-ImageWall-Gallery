@@ -68,6 +68,7 @@ $config['Thumbnail Cropped'] = 'on';
 $config['Thumbnail Quality'] = 80;
 $config['Thumbnail Size'] = 'normal';
 $config['Thumbnail Background'] = 'black';
+$config['Controls Image'] = 'black';
 $config['Image Size'] = '';
 $config['Sort'] = 'normal';
 $config['Embedded Script'] = 'off';
@@ -392,6 +393,7 @@ if($config['Embedded Script'] == 'off' || headers_sent() == false) header('conte
 <?php } ?>
 	<style type="text/css">
 		/* GALLERY */
+		.icon-grid,.icon-arrow-left,.icon-arrow-right,.icon-fullscreen-exit,.icon-fullscreen {background-image: url(img/controls-<?php echo $config['Controls Image']; ?>.png);background-repeat: no-repeat}
 		p.error { width: 550px; margin: 50px auto; font-size: 14px; line-height:1.5em; text-align:center;}
 		#imagewall { max-width: <?php echo $config['ImageWall Width']; ?>; margin: 0 auto;}
 		#gallery-container .item img {width: <?php echo p_getThumbnailSize($config['Thumbnail Size']); ?>px; height: <?php echo p_getThumbnailSize($config['Thumbnail Size']); ?>px; box-shadow: 0 0 3px #555; border-radius: 4px;}
