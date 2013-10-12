@@ -440,7 +440,7 @@ if($config['Embedded Script'] == 'off' || headers_sent() == false) header('conte
 	<ul class="items--big">
 	<?php for($i = 0; $i < $number_of_images; $i++) { ?>	
 	<?php $image_title = str_replace('_', ' ', substr($images[$i], 0, strrpos($images[$i], '.'))); ?>
-	<li class="item--big"><a href="#"><img src="<?php echo (empty($config['Image Size']) ? '' : $set['script name'] . '?image=') . $config['Images Dir'] . $images[$i]; ?>" alt="<?php echo $image_title; ?>" /></a></li><?php } ?>	
+	<li class="item--big"><figure><a href="#"><img src="<?php echo (empty($config['Image Size']) ? '' : $set['script name'] . '?image=') . $config['Images Dir'] . $images[$i]; ?>" alt="<?php echo $image_title; ?>" /></figure></a></li><?php } ?>	
 	</ul>
 	</div>
 	<div class="controls">
@@ -474,7 +474,7 @@ if($config['Embedded Script'] == 'off' || headers_sent() == false) header('conte
 <?php } ?>
 </div>
 <script src="js/jquery.min.js"></script>
-<script src="js/screenfull.min.js"></script>
+<script src="js/plugins.js"></script>
 <script src="js/scripts.js"></script>
 <script src="js/jquery-tiptip.min.js"></script>
 <script>
