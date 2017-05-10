@@ -4,7 +4,7 @@ Pagemap Imagewall Gallery
 ### ABOUT
 Pagemap ImageWall Gallery is a web gallery script, free for private and commercial use, originally developed by Pagemap Premium Portfolios in Germany, and adapted for mobile devices (& retina screen) by Kris
 
-Demo kris : http://test.xoofoo.org/pagemapgallery/
+Demo kris : https://xoofoo.org/demo/pagemapgallery/
 
 ### SYSTEM REQUIREMENTS
 - Apache Webserver (recommended) or IIS
@@ -22,7 +22,7 @@ It will delete the cache directory and the config.txt if you are not able to do 
 
 ### CONFIGURATION
 You can change the look and feel of the gallery in many ways.
-Create a config.ini in the same directory as Pagemap ImageWall and check out the available Config Tags here: http://getpagemap.com/pagemap-imagewall
+Create a config.ini in the same directory as Pagemap ImageWall
 
 ### EMBEDDING
 If you want to include the script (index.php) in a custom PHP file set Config Tag [Embedded Script'] to "on" and use $set['script name'] in your script to define the path to the Pagemap ImageWall script. You can optional define a root path for config file and default images dir with $set['script dir'].
@@ -44,7 +44,6 @@ You are allows to:
 - Customize the function and design
 
 You are NOT allowed to:
-- Delete the link to getpagemap.com in the footer
 - Claim the script as your own
 - Sale parts of the script
 
