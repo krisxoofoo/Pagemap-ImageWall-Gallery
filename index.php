@@ -69,7 +69,7 @@ $config['Thumbnail Size'] = 'normal';
 $config['Thumbnail Background'] = 'black';
 $config['Controls Image'] = 'black';
 $config['Image Size'] = '';
-$config['Sort'] = 'normal';
+$config['Sort'] = 'normal'; // normal, reverse, shuffle, dateasc or datedesc
 $config['Embedded Script'] = 'off';
 $config['Other JS'] = '';
 $config['ImageWall Width'] = 'auto';
@@ -309,6 +309,8 @@ if(empty($config['Images List'])) {
 		if(is_file($config['Images Dir'] . $item) && !in_array($item, $set['exclude images'])) {
 			$imagedata = getimagesize($config['Images Dir'] . $item);
 			if($imagedata[2] == 1 || $imagedata[2] == 2 || $imagedata[2] == 3) $images[] = $item;
+			//Added variable to capture image's 'Modified Date'
+			$times[] = filemtime($config['Images Dir'] . $item);
 		}
 	}
 	closedir($set['images dir open']);
@@ -323,7 +325,17 @@ if(empty($config['Images List'])) {
 	$images = empty($config['Images List']) ? array() : explode(',', $config['Images List']);
 	for($i = 0; $i < count($images); $i++) $images[$i] = trim($images[$i]);
 	if(count($images) == 0) p_message('<strong>No images found.</strong><br>Your file list is empty.');
-}	
+}
+
+// Sort images - Moved up above 'Set Page' so that 'Set Page' follows sorting
+// Added ability to sort by 'Modified Date' (Ascending and Descending)
+switch($config['Sort']) {
+	case 'normal' : sort($images); break;
+	case 'reverse' : rsort($images); break;
+	case 'shuffle' : shuffle($images); break;
+	case 'dateasc' : array_multisort($times , SORT_ASC, $images); break;
+	case 'datedesc' : array_multisort($times , SORT_DESC, $images); break;
+}
 // Set Page
 $page = max(1, intval($_GET['page']));
 $allpage = ceil(count($images) / $config['Per Page']);
@@ -333,12 +345,7 @@ if ($page > $allpage) {
 $start = ($page - 1) * $config['Per Page'];
 $mulit = mulit(count($images), $page, $config['Per Page']);
 $images = array_slice($images, $start, $config['Per Page']);
-// Sort images
-switch($config['Sort']) {
-	case 'normal' : sort($images); break;
-	case 'reverse' : rsort($images); break;
-	case 'shuffle' : shuffle($images); break;
-}
+
 // Get number of existing files
 for($i = 0; $i < count($images); $i++) if(is_file($config['Images Dir'] . $images[$i])) break;
 if($i == count($images)) {
